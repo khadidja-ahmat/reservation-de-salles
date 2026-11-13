@@ -4,8 +4,6 @@ Application web de **réservation de salles** : on choisit une salle, un crénea
 
 Projet personnel, réalisé pour mettre en pratique une architecture complète **Spring Boot + Angular + PostgreSQL + Docker**.
 
-> Projet personnel réalisé en 2026, avec l'aide d'un assistant IA pour le développement.
-
 ## Fonctionnalités
 
 - Inscription et connexion (authentification par **JWT**)
