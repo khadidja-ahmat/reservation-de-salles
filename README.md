@@ -4,6 +4,24 @@ Application web de **réservation de salles** : on choisit une salle, un crénea
 
 Projet personnel, réalisé pour mettre en pratique une architecture complète **Spring Boot + Angular + PostgreSQL + Docker**.
 
+## Aperçu
+
+**Liste des salles (administrateur : boutons Supprimer et ajout de salle)**
+
+![Liste des salles](docs/doc1.png)
+
+**Liste des salles (utilisateur : réservation seulement)**
+
+![Salles pour un utilisateur](docs/doc4.png)
+
+**Vue administrateur : toutes les réservations**
+
+![Toutes les réservations](docs/doc2.png)
+
+**Vue utilisateur : mes réservations**
+
+![Mes réservations](docs/doc3.png)
+
 ## Fonctionnalités
 
 - Inscription et connexion (authentification par **JWT**)
