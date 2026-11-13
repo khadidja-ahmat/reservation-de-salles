@@ -90,9 +90,3 @@ reservation-salles/
 └── .github/workflows/  intégration continue (tests + build + images Docker)
 ```
 
-## Pistes d'amélioration
-
-- Migrations de base de données avec Flyway au lieu de `ddl-auto=update`
-- Vue calendrier pour les disponibilités
-- Notifications par email
-- Tests Angular
