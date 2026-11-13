@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: reservationsalles
+      POSTGRES_USER: reservationsalles
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-reservationsalles}
+    volumes:
+      - donnees:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U reservationsalles"]
+      interval: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/reservationsalles
+      DB_USER: reservationsalles
+      DB_PASSWORD: ${DB_PASSWORD:-reservationsalles}
+      JWT_SECRET: ${JWT_SECRET:-changez-moi-changez-moi-changez-moi-123456}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@reservationsalles.local}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "8081:80"
+
+volumes:
+  donnees:
